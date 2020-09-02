@@ -1,0 +1,25 @@
+class Solution {
+public:
+    vector<int> sortArrayByParity(vector<int>& A)
+    {
+        
+        int s=A.size();
+        int t=0;
+        for(int i=0;i<A.size();)
+        {
+            if(A[i]&1)
+            {
+                int x=A[i];
+              
+                A.push_back(x);
+             
+                A.erase(A.begin()+i);
+            }
+            else i++;
+            t++;
+            if(t>s)break;
+        } 
+    return A;
+    }
+    
+};

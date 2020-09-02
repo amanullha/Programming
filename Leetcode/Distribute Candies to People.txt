@@ -1,0 +1,26 @@
+class Solution {
+public:
+    vector<int> distributeCandies(int c, int n) {
+       vector<int>v(n,0);
+        int i=0;
+        int j=1;
+        while(c>0)
+        {
+            i=i%n;
+            
+            if(j<=c)
+            v[i++]+=j;
+            
+            else
+            {v[i++]+=c;c=0;}
+            
+            c-=j;
+            j++;
+            
+           // for(int x:v)cout<<x<<" ";
+           // cout<<endl;
+           
+        }
+        return v;
+    }
+};

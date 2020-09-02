@@ -1,0 +1,31 @@
+class Solution {
+public:
+    vector<int> numsSameConsecDiff(int N, int K) {
+        vector<int>res;
+        if(N==1)res.push_back(0);// single number ar somoy '0' include hobe and N=1 hole e single number hobe shob gola
+        for(int d=1;d<10;++d)
+        {
+            dfs(d,N-1,K,res);
+
+        }
+    return res;
+    }
+       
+    void dfs(int d,int n,int k,vector<int>& res)
+    {
+
+    if(n==0){res.push_back(d);return ;}
+        
+        
+    int last_d=d%10;
+        
+    if(last_d>=k)
+            
+            dfs(d*10+(last_d-k),n-1,k,res);
+        
+        
+    if(k>0 && last_d+k<10)
+         
+            dfs(d*10+(k+last_d),n-1,k,res);
+        }
+};
