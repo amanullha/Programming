@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int compareVersion(string v1, string v2) {
+       int i=0,j=0;
+        int l1=v1.size();
+        int l2=v2.size();
+       
+        while(i<l1 || j<l2)
+        {
+            int x=0,y=0;
+            while(i<l1 && v1[i]!='.') x=x*10+(v1[i++]-'0');
+            while(j<l2 && v2[j]!='.') y=y*10+(v2[j++]-'0');
+            
+            if(x>y)return 1;
+            if(x<y)return -1;
+          
+            i++;
+            j++;      
+        
+        }
+        return 0;
+    }
+    
+
+};

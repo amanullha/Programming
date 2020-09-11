@@ -1,0 +1,30 @@
+class Solution {
+    /*
+    
+    1. at any given pint ,there are 3 choices possible
+        a. i th element
+        b.Max_neg before i th * i th element
+        c. max_pos before i th * i th element
+    2. initially a,b,c will b e equal to 0 th index element
+    3. in every iteration from i+1, we will keep th track fo ans which will be max of ans and the max of above 3 choice
+    
+    */
+public:
+    int maxProduct(vector<int>& nums) {
+        int Maxval,Minval,ans;
+        Maxval=Minval=ans=nums[0];
+        
+        for(int i=1;i<nums.size();i++)
+        {
+         int choiceMax=Maxval*nums[i];
+         int choiceMin=Minval*nums[i];
+            
+            Maxval=max( nums[i],max(choiceMin,choiceMax));
+            Minval=min(nums[i],min(choiceMin, choiceMax));
+            
+            ans=max(ans,max(Maxval,Minval));
+        }
+        
+    return ans;
+    }
+};

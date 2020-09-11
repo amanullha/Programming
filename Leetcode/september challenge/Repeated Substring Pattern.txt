@@ -1,0 +1,39 @@
+class Solution {
+public:
+    bool repeatedSubstringPattern(string s) {
+        if(s=="aba")return false;
+        int l=s.size();
+        if(l<2)return false;
+        for(int i=l/2;i>=0;i--)
+        {
+            if(l%i==0)
+            {
+                string ss=s.substr(0,i);
+                if(ck(ss,s))return true;
+
+            }
+        }
+        
+        
+      return false;  
+    }
+    
+bool ck(string s,string str)
+{
+    int i=0;
+    cout<<"ok  "<<s<<"  "<<str<<endl;
+ while(i*s.size()<str.size())
+ {
+     int st=i*s.size();
+     cout<<"i  "<<i<<"  st "<<st<<endl;
+    string cs=str.substr(st,s.size());
+     cout<<cs<<"  "<<s<<endl;
+        if(cs!=s)return false;
+     i++;
+   }
+
+  return true;
+}
+    
+    
+};
