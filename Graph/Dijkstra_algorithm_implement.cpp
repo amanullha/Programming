@@ -249,7 +249,7 @@ struct node{
 
 };
 
-Dijstkra(int N_node,vector<int> graph[],vector<int> cost[],int source)
+void Dijstkra(int N_node,vector<int> graph[],vector<int> cost[],int source)
 {
     int distance[N_node+1];
 

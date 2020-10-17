@@ -40,9 +40,8 @@ void dfs(int u)
 
 int main()
 {
-	while (cin >> node >> edge)
+	while (cin >> node >> edge, edge != 0 || node != 0)
 	{
-		if(edge == 0 || node == 0)return 0;
 		memset(visited, 0, sizeof(visited));
 
 		graph.clear();
@@ -81,3 +80,4 @@ int main()
 	}
 	return 0;
 }
+
