@@ -1,3 +1,4 @@
+
 #include <unordered_map>
 #include <vector>
 #include <stdio.h>
@@ -30,10 +31,10 @@ void hbl(ll n)
 
 int main()
 {
-	
+
 	vector<int>h;
 	h.push_back(0);
-	
+
 	hbl(1);
 	for (auto x : un)
 	{
