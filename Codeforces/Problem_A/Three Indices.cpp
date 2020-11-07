@@ -28,25 +28,15 @@ void solve()
 	{
 		cin>>v[i];
 	}
-	for(int i=0;i<n-2;i++)
+	for(int i=1;i<n-1;i++)
 	{
 		
-		for(int j=i+1;j<n-1;j++)
-		{
-			if(v[i]<v[j])
+		if(v[i]>v[i+1] && v[i]>v[i-1])
 			{
-				for(int k=j+1;k<n;k++)
-				{
-					if(v[j]>v[k] && i<j && j<k)
-					{
-						cout<<"YES\n";
-						cout<<i+1<<" "<<j+1<<" "<<k+1<<endl;
-						//cout<<v[i]<<" "<<v[j]<<" "<<v[k]<<endl;
-						return;
-					}
-				}
-			}
-		}
+				cout<<"YES\n";
+				cout<<i<<" "<<i+1<<" "<<i+2<<endl;
+				return;
+			}	
 	}
 	cout<<"NO\n";
 	

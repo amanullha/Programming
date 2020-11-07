@@ -24,19 +24,19 @@ void solve()
 	sn(n);
 	for (ll i = 1; i < n + 1; i++)
 	{
-		cout<<'1'<<" ";
-		}
-		puts("");
-}
-	int main()
-	{
-		int t;
-		cin >> t;
-		while (t--)solve();
-
-
-
-
-		pf("\n\n\n\n"); Time();
-		return 0;
+		cout << '1' << " ";
 	}
+	puts("");
+}
+int main()
+{
+	int t;
+	cin >> t;
+	while (t--)solve();
+
+
+
+
+	pf("\n\n\n\n"); Time();
+	return 0;
+}
