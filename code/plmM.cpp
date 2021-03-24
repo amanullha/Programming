@@ -1,10 +1,4 @@
-/*
- *************** BISMILLAH HIR RAHMANIR RAHIM ***************
 
-     AUTHOR: MD.AMANULLHA
-     UNIVERSITY OF LIBERAL ARTS BANGLADESH
-     DATE: / / 2021
-*/
 #include<bits/stdc++.h>
 #define endl                 '\n'
 #define PI              	acos(-1.0)
@@ -44,63 +38,37 @@
 using namespace std;
 inline void Time() { cerr << "Time elapsed : " << 1.0 * clock() / CLOCKS_PER_SEC << " s. \n";}
 
-/*------------------------------Graph Moves----------------------------*/
-//const int fx[]={+1,-1,+0,+0};
-//const int fy[]={+0,+0,+1,-1};
-//const int fx[]={+0,+0,+1,-1,-1,+1,-1,+1};   // Kings Move
-//const int fy[]={-1,+1,+0,+0,+1,+1,-1,-1};  // Kings Move
-//const int fx[]={-2, -2, -1, -1,  1,  1,  2,  2};  // Knights Move
-//const int fy[]={-1,  1, -2,  2, -2,  2, -1,  1}; // Knights Move
-/*---------------------------------------------------------------------*/
 
-
-
-bool ok(ll mid, vector<ll> v, ll cow)
-{
-	ll prev = v[0];
-	cow--;
-	for (ll i = 1; i < (ll)v.size(); i++)
-	{
-		if (v[i] - prev >= mid)
-		{
-			prev = v[i];
-			cow--;
-			if(cow==0)return 1;
-		}
-	}
-//cout<<cow<<endl;
-	return cow <= 0;
-}
 
 
 
 void solve()
 {
-	ll n, cow;
-	cin >> n >> cow;
-	VI v(n);
-	for (ll &x : v)cin >> x;
-
-
-	sort(all(v));
-	ll low = 0, high = v[n-1];
-	ll ans=0;
-	ll mid;
-	while (low<=high)
+	string a, b;
+	cin >> a >> b;
+	int al = a.size();
+	int bl = b.size();
+	if ((al == 1 && a == "0") || (bl == 1 && b == "0"))
 	{
-		
-		 mid = low+(high-low)/2;
-
-		if (ok(mid, v, cow))
-			{
-				low = mid+1;
-				ans=mid;
-			}
-		else high = mid-1;
+		cout << "0" << endl;
+		return;
 	}
-//cout<<"low "<<low<<" mid "<<mid<<" high "<<high<<" ans "<<ans<<endl;
-	
-	cout<<ans << endl;
+	int c1 = 0,c2=0;
+	for (char x : a)
+	{
+		if (x == 'S')c1++;
+	}
+	for (char x : b)
+	{
+		if (x == 'S')c2++;
+	}
+
+	int x = c1 * c2;
+	while (x--)cout << "S(";
+	cout << "0";
+	x=c1*c2;
+	while (x--)cout << ")";
+
 
 }
 
@@ -108,10 +76,7 @@ int main()
 {	//fio;
 
 
-	int t;
-	cin >> t;
-	//sf1(t);
-	while (t--)solve();
+	solve();
 
 
 	//pf("\n\n\n\n"); Time();

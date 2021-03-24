@@ -1,10 +1,4 @@
-/*
- *************** BISMILLAH HIR RAHMANIR RAHIM ***************
 
-     AUTHOR: MD.AMANULLHA
-     UNIVERSITY OF LIBERAL ARTS BANGLADESH
-     DATE: / / 2021
-*/
 #include<bits/stdc++.h>
 #define endl                 '\n'
 #define PI              	acos(-1.0)
@@ -44,74 +38,76 @@
 using namespace std;
 inline void Time() { cerr << "Time elapsed : " << 1.0 * clock() / CLOCKS_PER_SEC << " s. \n";}
 
-/*------------------------------Graph Moves----------------------------*/
-//const int fx[]={+1,-1,+0,+0};
-//const int fy[]={+0,+0,+1,-1};
-//const int fx[]={+0,+0,+1,-1,-1,+1,-1,+1};   // Kings Move
-//const int fy[]={-1,+1,+0,+0,+1,+1,-1,-1};  // Kings Move
-//const int fx[]={-2, -2, -1, -1,  1,  1,  2,  2};  // Knights Move
-//const int fy[]={-1,  1, -2,  2, -2,  2, -1,  1}; // Knights Move
-/*---------------------------------------------------------------------*/
-
-
-
-bool ok(ll mid, vector<ll> v, ll cow)
-{
-	ll prev = v[0];
-	cow--;
-	for (ll i = 1; i < (ll)v.size(); i++)
-	{
-		if (v[i] - prev >= mid)
-		{
-			prev = v[i];
-			cow--;
-			if(cow==0)return 1;
-		}
-	}
-//cout<<cow<<endl;
-	return cow <= 0;
-}
-
-
 
 void solve()
 {
-	ll n, cow;
-	cin >> n >> cow;
-	VI v(n);
-	for (ll &x : v)cin >> x;
+	ll n;
+	cin >> n;
+	priority_queue<pr>q;
 
-
-	sort(all(v));
-	ll low = 0, high = v[n-1];
-	ll ans=0;
-	ll mid;
-	while (low<=high)
+	ll t = 0;
+	for (ll i = 1; i <= n; i++)
 	{
-		
-		 mid = low+(high-low)/2;
-
-		if (ok(mid, v, cow))
-			{
-				low = mid+1;
-				ans=mid;
-			}
-		else high = mid-1;
+		ll x;
+		cin >> x;
+		t += x;
+		if (x)q.push({x, i});
 	}
-//cout<<"low "<<low<<" mid "<<mid<<" high "<<high<<" ans "<<ans<<endl;
-	
-	cout<<ans << endl;
+
+	if (t & 1)
+	{
+		cout << "no" << endl;
+		return;
+	}
+	if (q.size() == 0)
+	{
+		cout << "yes" << endl;
+		return;
+	}
+	vector<pr>v;
+	while (!q.empty())
+	{
+		if (q.size() == 1)
+		{
+			cout << "no" << endl;
+			return;
+		}
+
+		auto x = q.top();
+		q.pop();
+		auto y = q.top();
+		q.pop();
+
+		v.pb({x.ss, y.ss});
+
+		x.ff -= 1;
+		y.ff -= 1;
+
+		if (x.ff)q.push(x);
+		if (y.ff)q.push(y);
+
+
+
+
+	}
+
+	cout << "yes" << endl;
+
+	for (ll i = 0; i < v.size(); i++)
+	{
+		cout << v[i].ff << " " << v[i].ss << endl;
+	}
+
+
+
+
+
 
 }
 
 int main()
-{	//fio;
-
-
-	int t;
-	cin >> t;
-	//sf1(t);
-	while (t--)solve();
+{
+	solve();
 
 
 	//pf("\n\n\n\n"); Time();

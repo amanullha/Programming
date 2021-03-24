@@ -52,68 +52,29 @@ inline void Time() { cerr << "Time elapsed : " << 1.0 * clock() / CLOCKS_PER_SEC
 //const int fx[]={-2, -2, -1, -1,  1,  1,  2,  2};  // Knights Move
 //const int fy[]={-1,  1, -2,  2, -2,  2, -1,  1}; // Knights Move
 /*---------------------------------------------------------------------*/
+ 
 
 
 
-bool ok(ll mid, vector<ll> v, ll cow)
-{
-	ll prev = v[0];
-	cow--;
-	for (ll i = 1; i < (ll)v.size(); i++)
-	{
-		if (v[i] - prev >= mid)
-		{
-			prev = v[i];
-			cow--;
-			if(cow==0)return 1;
-		}
-	}
-//cout<<cow<<endl;
-	return cow <= 0;
-}
 
 
 
-void solve()
-{
-	ll n, cow;
-	cin >> n >> cow;
-	VI v(n);
-	for (ll &x : v)cin >> x;
-
-
-	sort(all(v));
-	ll low = 0, high = v[n-1];
-	ll ans=0;
-	ll mid;
-	while (low<=high)
-	{
-		
-		 mid = low+(high-low)/2;
-
-		if (ok(mid, v, cow))
-			{
-				low = mid+1;
-				ans=mid;
-			}
-		else high = mid-1;
-	}
-//cout<<"low "<<low<<" mid "<<mid<<" high "<<high<<" ans "<<ans<<endl;
-	
-	cout<<ans << endl;
-
-}
 
 int main()
-{	//fio;
+{ 
+	int n;
+	cin>>n;
+	int h;
+	cin>>h;
 
-
-	int t;
-	cin >> t;
-	//sf1(t);
-	while (t--)solve();
-
-
-	//pf("\n\n\n\n"); Time();
+	int sum=0;
+	while(n--)
+	{
+		int x;
+		cin>>x;
+		if(x<=h)sum+=1;
+		else sum+=2;
+	}
+	cout<<sum<<endl;
 	return 0;
 }

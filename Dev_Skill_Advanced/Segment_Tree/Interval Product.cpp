@@ -20,7 +20,7 @@ void build(int st, int en, int nd)
 
 int query(int st, int en, int nd, int L, int R)
 {
-    if (L <= st && en <= R) return tree[nd]; /// if the query segment is completely overlapping our tree segment/node.
+    if (L <= st && en <= R) return tree[nd]; /// if the query segment is completely overlapping our tree segment/tree.
     if (en < L || R < st) return 1;
     return query(left, L, R) * query(right, L, R);
 }

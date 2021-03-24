@@ -10,7 +10,7 @@
 #define PI              	acos(-1.0)
 #define pf              	printf
 #define sf            		scanf
-#define ff 					first
+#define ff 					i
 #define ss					second
 #define pb 					push_back
 #define mk 					make_pair
@@ -63,32 +63,32 @@ void solve()
 
 	string s;
 	cin >> s;
-int mx=INT_MIN;
-	for (int i = 0; i < (int)s.size()-1; i++)
+	int mx = INT_MIN;
+	for (int i = 0; i < (int)s.size() - 1; i++)
 	{
-		int total=0;
-		if(abs((int)s[i]-(int)s[i])==32)
+		int total = 0;
+		if (abs((int)s[i] - (int)s[i]) == 32)
 		{
-			int age=0,pore=0;
+			int age = 0, pore = 0;
 
-			int idx=i-1;
+			int idx = i - 1;
 
-			while(s[idx--]==s[i])age++;
-			idx=i;
-			while(s[idx++]==s[i])pore++;
+			while (s[idx--] == s[i])age++;
+			idx = i;
+			while (s[idx++] == s[i])pore++;
 
-			total=age+pore;
+			total = age + pore;
 		}
-		mx=max(mx,total);
+		mx = max(mx, total);
 	}
-cout<<mx<<endl;
+	cout << mx << endl;
 }
 
 int main()
 {	//fio;
 
 
-solve();
+	solve();
 
 
 	//pf("\n\n\n\n"); Time();

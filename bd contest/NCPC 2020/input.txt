@@ -1,0 +1,6 @@
+1
+3
+/root/documents/a
+/root/downloads/b
+/tmp/downloadedfile
+rs

@@ -55,65 +55,137 @@ inline void Time() { cerr << "Time elapsed : " << 1.0 * clock() / CLOCKS_PER_SEC
 
 
 
-bool ok(ll mid, vector<ll> v, ll cow)
-{
-	ll prev = v[0];
-	cow--;
-	for (ll i = 1; i < (ll)v.size(); i++)
-	{
-		if (v[i] - prev >= mid)
-		{
-			prev = v[i];
-			cow--;
-			if(cow==0)return 1;
-		}
-	}
-//cout<<cow<<endl;
-	return cow <= 0;
-}
 
 
 
 void solve()
 {
-	ll n, cow;
-	cin >> n >> cow;
-	VI v(n);
-	for (ll &x : v)cin >> x;
+	ll n;
+	cin >> n;
+	vector<string>v(n);
 
-
-	sort(all(v));
-	ll low = 0, high = v[n-1];
-	ll ans=0;
-	ll mid;
-	while (low<=high)
+	vector<int> p, q;
+	for (int i = 0; i < n; i++)
 	{
-		
-		 mid = low+(high-low)/2;
-
-		if (ok(mid, v, cow))
-			{
-				low = mid+1;
-				ans=mid;
-			}
-		else high = mid-1;
+		stringstream geek(v[i]);
+		int x;
+		geek >> x;
+		p.pb(x);
 	}
-//cout<<"low "<<low<<" mid "<<mid<<" high "<<high<<" ans "<<ans<<endl;
-	
-	cout<<ans << endl;
+	q = p;
+	sort(all(q));
+
+	if (p != q)
+	{
+		for (string &x : v)cout << x << " ";
+	}
+
+	for (string &x : v)cin >> x;
+	bool f = 1;
+	for (int i = 0; i < n - 1; i++)
+	{
+
+		int j = i + 1;
+
+		string a = v[i];
+		string b = v[j];
+
+		if (a.size() == b.size())
+		{
+			cout << a << " : " << b << endl;
+
+			for (int k = 0; k < (int)a.size(); k++)
+			{
+				if (a[k] == b[k] && a[k] == '1')
+				{
+					//cout << " e1"  << i << "  " << a << " : " << b << endl;
+
+					a[k] = '9';
+					if (b < a)
+					{
+						v[i] = a;
+						f = 0;
+						for (string &x : v)cout << x << " ";
+						return;
+					}
+
+				}
+				else if (a[k] == b[k] && a[k] != '1')
+				{
+					//cout << " e2"  << i << "  " << a << " : " << b << endl;
+
+					b[k] = '1';
+					if (b < a)
+					{
+						v[j] = b;
+						f = 0;
+						for (string &x : v)cout << x << " ";
+						return;
+					}
+
+				}
+
+				else if (a[k] < b[k] && b[k] != '9')
+				{
+					//cout << " if1"  << i << "  " << a << " : " << b << endl;
+					a[k] = '9';
+
+					if (b < a)
+					{
+						v[i] = a;
+						f = 0;
+						for (string &x : v)cout << x << " ";
+						return;
+					}
+				}
+				else if (a[k] < b[k] && a[k] != '1')
+				{
+					//cout << " if2"  << i << "  " << a << " : " << b << endl;
+					b[k] = '1';
+
+					if (b < a)
+					{
+						v[j] = b;
+						f = 0;
+						for (string &x : v)cout << x << " ";
+						return;
+
+					}
+				}
+
+
+
+
+			}
+
+		}
+	}
+
+	cout << "impossible" << endl;
+
+	//for (string &x : v)cout << x << " ";
+
 
 }
 
+ll s1, s2, s3;
 int main()
-{	//fio;
+{
+	ll n;
+	cin >> n;
 
+	for (ll i = 0; i < n; i++)
+	{
+		ll x;
+		cin >> x;
 
-	int t;
-	cin >> t;
-	//sf1(t);
-	while (t--)solve();
+		if (x == 1)++s1;
+		else if (x == 2) s2 += s2 + s1;
+		else if (x == 3)s3 += s2;
 
-
+		cout<<s1<<" "<<s2<<" "<<s3<<endl;
+	}
+	cout << s3 << endl;
 	//pf("\n\n\n\n"); Time();
 	return 0;
 }

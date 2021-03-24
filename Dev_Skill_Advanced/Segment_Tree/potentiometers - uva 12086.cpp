@@ -33,7 +33,7 @@
 #define sz(x)      			((int)x.size())
 #define tc(cn) 				pf("Case %d: ",cn)
 
-#define M 					10000007
+#define M 					800500
 #define INF                 2147483647
 
 #define sqr(x)           	(x)*(x)
@@ -54,66 +54,101 @@ inline void Time() { cerr << "Time elapsed : " << 1.0 * clock() / CLOCKS_PER_SEC
 /*---------------------------------------------------------------------*/
 
 
+ll tree[M + 2];
+ll arr[M + 2];
 
-bool ok(ll mid, vector<ll> v, ll cow)
+void build(ll start, ll end, ll node)
 {
-	ll prev = v[0];
-	cow--;
-	for (ll i = 1; i < (ll)v.size(); i++)
+	if (start == end)
 	{
-		if (v[i] - prev >= mid)
+		tree[node] = arr[start];
+		return;
+	}
+
+	ll mid = (start + end) / 2;
+	build(start, mid, node + node);
+	build(mid + 1, end, node + node + 1);
+
+	tree[node] = tree[node + node] + tree[node + node + 1];
+}
+
+void update(ll start, ll end, ll node, ll index, ll value)
+{
+	if (end < index || start > index)return;
+	if (start == end)
+	{
+		tree[node] = value;
+		return;
+	}
+
+	ll mid = (start + end) / 2;
+	update(start, mid, node + node,index,value);
+	update(mid + 1, end, node + node + 1,index,value);
+
+	tree[node] = tree[node + node] + tree[node + node + 1];
+}
+
+ll query(ll start, ll end, ll node, ll l, ll r)
+{
+	if (start > r || end < l)return 0;
+
+	if (start >= l && end <= r)return tree[node];
+
+	ll mid = (start + end) / 2;
+	ll left = query(start, mid, node + node, l , r);
+	ll right = query(mid + 1, end, node + node + 1, l, r);
+
+	//return tree[node] = left+right;
+	return left + right;
+}
+
+void clr(ll n)
+{
+	for (ll i = 0; i < n + 2; i++) arr[i] = 0;
+
+	for (ll i = 0; i <= 4 * n + 5; i++)tree[i] = 0;
+}
+int t = 1;
+int main()
+{
+
+	ll n;
+	while (cin >> n && n)
+	{
+		clr(n);
+		if(t>1)cout<<endl;
+		cout << "Case " << t++ << ":\n";
+		for (ll i = 0; i < n; i++)cin >> arr[i];
+
+		build(0, n - 1, 1);
+
+		string s;
+		while (cin >> s && s != "END")
 		{
-			prev = v[i];
-			cow--;
-			if(cow==0)return 1;
+			if (s == "S")
+			{
+				ll index, value;
+				cin >> index >> value;
+				index--;
+				update(0, n - 1, 1, index, value);
+
+				//cout << endl;
+				//cout << "up  " << index << "  : " << value << endl;
+				//for (ll i = 0; i < 6; i++)cout << i << "  :  " << tree[i] << endl;
+				//cout << endl;
+				
+			}
+			else if (s == "M")
+			{
+				ll l, r;
+				cin >> l >> r;
+				l--, r--;
+				//cout << endl << l << " : " << r << endl;
+				cout << query(0, n - 1, 1, l, r) << endl;
+			}
 		}
 	}
-//cout<<cow<<endl;
-	return cow <= 0;
-}
 
 
-
-void solve()
-{
-	ll n, cow;
-	cin >> n >> cow;
-	VI v(n);
-	for (ll &x : v)cin >> x;
-
-
-	sort(all(v));
-	ll low = 0, high = v[n-1];
-	ll ans=0;
-	ll mid;
-	while (low<=high)
-	{
-		
-		 mid = low+(high-low)/2;
-
-		if (ok(mid, v, cow))
-			{
-				low = mid+1;
-				ans=mid;
-			}
-		else high = mid-1;
-	}
-//cout<<"low "<<low<<" mid "<<mid<<" high "<<high<<" ans "<<ans<<endl;
-	
-	cout<<ans << endl;
-
-}
-
-int main()
-{	//fio;
-
-
-	int t;
-	cin >> t;
-	//sf1(t);
-	while (t--)solve();
-
-
-	//pf("\n\n\n\n"); Time();
 	return 0;
 }
