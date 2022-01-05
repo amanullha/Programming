@@ -1,0 +1,29 @@
+class Solution {
+public:
+    vector<int> partitionLabels(string s) {
+        
+        unordered_map<char,int>un ;
+        
+        for(int i=0;i<s.size();i++)
+        {
+            if(un.find(s[i])==un.end())un[s[i]]=i;
+            else un[s[i]]=i;
+        }
+        
+        vector<int>v;
+         for(int i=0;i<s.size();)
+         {
+             //cout<<"i "<<i<<"  ";
+             int x=un[s[i]];
+             for(int j=i+1;j<x;j++)
+             {
+                if(un[s[j]]>x)x=un[s[j]];
+             }
+             int y=x-i+1;
+            // cout<<"y "<<y<<" x "<<x<<endl;
+             v.push_back(y);
+             i=x+1;
+         }
+        return v;
+    }
+};

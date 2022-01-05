@@ -1,0 +1,8 @@
+BFS Application
+
+1. Connectivity checkk
+2. Finding cycles
+3. Bipartiteness check
+4. Shortest paths
+5. For any node u and v in bfs queue | dis[u]-dis[v] | <=1
+6. complexity (V+E)

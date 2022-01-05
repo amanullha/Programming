@@ -1,0 +1,10 @@
+C:\Users\User\Desktop\C#\Inventory\bin\Debug\Inventory.exe.config
+C:\Users\User\Desktop\C#\Inventory\bin\Debug\Inventory.exe
+C:\Users\User\Desktop\C#\Inventory\bin\Debug\Inventory.pdb
+C:\Users\User\Desktop\C#\Inventory\obj\Debug\Inventory.csprojAssemblyReference.cache
+C:\Users\User\Desktop\C#\Inventory\obj\Debug\Inventory.Form1.resources
+C:\Users\User\Desktop\C#\Inventory\obj\Debug\Inventory.Properties.Resources.resources
+C:\Users\User\Desktop\C#\Inventory\obj\Debug\Inventory.csproj.GenerateResource.cache
+C:\Users\User\Desktop\C#\Inventory\obj\Debug\Inventory.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\C#\Inventory\obj\Debug\Inventory.exe
+C:\Users\User\Desktop\C#\Inventory\obj\Debug\Inventory.pdb

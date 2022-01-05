@@ -1,0 +1,39 @@
+class Solution {
+public:
+    string getHint(string s, string g) {
+        unordered_map<char,int>un ;
+        int bull=0;
+        for(int i=0;i<s.size();i++)
+        {
+            if(s[i]==g[i])bull++;
+            else{
+                if(un.find(s[i])==un.end())un[s[i]]=1;
+                else un[s[i]]++;
+            }
+        }
+        int cows=0;
+          for(int i=0;i<g.size();i++)
+          {
+              if(s[i]!=g[i])
+              {
+                    char x=g[i];
+                  if(un.find(x)!=un.end() && un[x]>0)
+                  {
+                    cows++;
+                      un[x]--;
+                  }
+              }
+              
+              
+          }
+        
+        
+        
+    string ans;
+        ans=to_string(bull);
+        ans+='A';
+        ans+=to_string(cows);
+        ans+='B';
+        return ans;
+    }
+};

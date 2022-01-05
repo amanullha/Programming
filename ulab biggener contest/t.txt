@@ -1,0 +1,155 @@
+how to open account in vjudge: https://www.youtube.com/watch?v=7M0iE3lB8AQ
+
+
+
+Problem : A
+
+->Grading Students
+hackerrank: 30508-grading-English
+https://www.hackerrank.com/challenges/grading/problem
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int k=n%5;
+        if(n>=38)
+        {
+        if(k==3||k==4)cout<<n+(5-(n%5))<<endl;
+        else cout<<n<<endl;
+        
+        }
+        else cout<<n<<endl;
+    }
+    return 0;
+}
+
+Problem : B
+
+-> Pangrams
+
+https://www.hackerrank.com/challenges/pangrams/problem
+
+#include <bits/stdc++.h>
+
+using namespace std;
+int ar[123];
+
+
+
+int main()
+{
+    string s;
+   getline(cin, s); 
+    for(char x:s)
+{
+    int k=(char)x;
+    if (k<97)
+    {ar[k+32]++;//cout<<x<<"  : "<<ar[k]<<endl;
+    }
+    else {ar[k]++;//cout<<x<<"  : "<<ar[k]<<endl;
+    }
+}
+
+int c=0;
+for(int i=97;i<=122;i++)if(ar[i]>0)c++;
+if(c==26)cout<< "pangram";
+else cout<< "not pangram";
+//cout<<c<<endl;
+    return 0;
+}
+
+
+Problem : C
+
+ -> Divisibility
+https://www.spoj.com/problems/SMPDIV/en/
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+
+
+int main()
+{
+	int t;
+	cin>>t;
+	while(t--){
+    int n,x,y;
+    cin>>n>>x>>y;
+   for(int i=x;i<n;i++)
+   {
+   	if(i%x==0 && i%y!=0)cout<<i<<" ";
+   }
+	}
+    return 0;
+}
+
+Problem : D
+
+-> Two Circles
+
+spoj
+https://www.spoj.com/BSCPROG/problems/SMPCIRC/
+#include<stdio.h>
+int main()
+{
+	int t,a1,b1,r1,a2,b2,r2;
+	scanf("%d",&t);
+	while(t--)
+	{
+		scanf("%d%d%d%d%d%d",&a1,&b1,&r1,&a2,&b2,&r2);
+		if((r2-r1)*(r2-r1)==(b2-b1)*(b2-b1)+(a2-a1)*(a2-a1))
+		printf("E\n");
+		else if((r2-r1)*(r2-r1)>(b2-b1)*(b2-b1)+(a2-a1)*(a2-a1))
+		printf("I\n");
+		else
+		printf("O\n");
+	}
+	return 0;
+} 
+
+Problem : I
+
+#include<bits/stdc++.h>
+#define pi  2*acos(0.0)
+using namespace std;
+int main()
+{
+    int t,k=1;
+    scanf("%d",&t);
+    while(t--)
+    {
+       double r;
+        scanf("%lf",&r);
+        printf("Case %d: %.02lf\n",k++,(r*r)*(4-pi));
+    }
+    return 0;
+}
+
+
+Problem : J
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   long n,m;
+    scanf("%d%d",&n,&m);
+    if(pow(2,n)>m)
+        cout<<m<<endl;
+
+    else
+        cout<<m%long(pow(2,n))<<endl;
+
+    return 0;
+}

@@ -1,0 +1,26 @@
+
+class Solution {
+public:
+    int sumRootToLeaf(TreeNode* root) {
+        if(root==nullptr)return 0;
+        
+        return summ(root,0);
+    }
+    
+   int summ(TreeNode* root,int sum)
+    {
+      if(root==nullptr)return 0;
+        
+        sum=(sum<<1)+root->val;
+       
+       if(root->left==nullptr && root->right==nullptr)return sum;
+        
+        int l=summ(root->left,sum);
+        int r=summ(root->right,sum);
+        return l+r;
+   }
+        
+        
+    
+    
+};

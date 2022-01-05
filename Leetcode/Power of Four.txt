@@ -1,0 +1,15 @@
+class Solution {
+public:
+    bool isPowerOfFour(int num) {
+        unordered_map<long long int,bool>un;
+        long long int x=1;
+        un[x]=true;
+        while(x>-2147483648 && x<2147483647)
+        {
+        x=x<<2;
+        un[x]=true;
+        }
+        if(un.find(num)==un.end())return false;
+    else return true;
+    }
+};

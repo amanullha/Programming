@@ -1,0 +1,98 @@
+class WordDictionary {
+struct tnode
+{
+	
+	int endhere;
+	tnode *child[26];
+
+	tnode()
+	{
+		endhere = false;
+
+		for (int i = 0; i < 26; i++)
+			child[i] = NULL;
+	}
+} ;
+    
+tnode *root=new tnode();
+
+    
+    void insert_tree(string s)
+    {
+       
+        tnode *curr = root;
+       
+        for(int i=0;i<s.size();i++)
+        {
+            int index = s[i]-'a';
+            if(curr->child[index]==NULL)
+                curr->child[index] = new tnode();
+            curr = curr->child[index];
+          
+        }
+        curr->endhere ++;
+    }
+      
+    
+    
+    
+    
+ bool search_tree(string s,tnode *curr,int pos,int n)
+    {        
+        if(s[pos]=='.')
+        {
+            bool res = false;
+          
+            for(int i=0;i<26;++i)
+            {
+                if(pos==n-1 && curr->child[i])
+                {
+                    
+                    res |= curr->child[i]->endhere>0?true:false;
+                }
+                else if(curr->child[i] && search_tree(s,curr->child[i],pos+1,n))
+                    return true;
+            }
+            return res;
+        }
+        else if(curr->child[s[pos]-'a'])
+        {
+            if(pos==n-1)
+            {
+               
+                return curr->child[s[pos]-'a']->endhere>0?true:false;
+            }
+            return search_tree(s,curr->child[s[pos]-'a'],pos+1,n);
+        }
+        return false;
+    }
+    
+    
+    
+    
+    
+    
+    
+public:
+    /** Initialize your data structure here. */
+    WordDictionary() {
+        
+    }
+    
+    /** Adds a word into the data structure. */
+    void addWord(string word) {
+        insert_tree(word);
+    }
+    
+    /** Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter. */
+    bool search(string word) {
+        return search_tree(word,root,0,word.size());
+    }
+};
+
+/**
+ * Your WordDictionary object will be instantiated and called as such:
+ * WordDictionary* obj = new WordDictionary();
+ * obj->addWord(word);
+ * bool param_2 = obj->search(word);
+ */

@@ -1,0 +1,18 @@
+C:\Users\User\Desktop\Inventory\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\User\Desktop\Inventory\bin\Debug\WindowsFormsApp1.exe
+C:\Users\User\Desktop\Inventory\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\User\Desktop\Inventory\obj\Debug\WindowsFormsApp1.Login.resources
+C:\Users\User\Desktop\Inventory\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\User\Desktop\Inventory\obj\Debug\Inventory Management.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Inventory\obj\Debug\Inventory Management.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Inventory\obj\Debug\WindowsFormsApp1.exe
+C:\Users\User\Desktop\Inventory\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\User\Desktop\Inventory\obj\Debug\WindowsFormsApp1.Home.resources
+C:\Users\User\Desktop\Inventory\obj\Debug\WindowsFormsApp1.Add_Category.resources
+C:\Users\User\Desktop\Inventory\obj\Debug\WindowsFormsApp1.Add_Product.resources
+C:\Users\User\Desktop\Inventory\obj\Debug\WindowsFormsApp1.Add_vendor.resources
+C:\Users\User\Desktop\Inventory\obj\Debug\WindowsFormsApp1.Add_User.resources
+C:\Users\User\Desktop\Inventory\obj\Debug\WindowsFormsApp1.Sells_Product.resources
+C:\Users\User\Desktop\Inventory\obj\Debug\WindowsFormsApp1.Show_image.resources
+C:\Users\User\Desktop\Inventory\obj\Debug\WindowsFormsApp1.Generate_Report.resources
+C:\Users\User\Desktop\Inventory\obj\Debug\Inventory Management.csprojAssemblyReference.cache

@@ -1,0 +1,35 @@
+class Solution {
+public:
+    string toGoatLatin(string S) {
+
+stringstream ss(S);
+string w,ans,ad="a";
+while(ss>>w)
+{
+	if(bw(w[0]))
+	{
+		ans+=w+"ma";
+	}
+	else
+	{
+
+		char c=w[0];
+		
+		 w.erase(0,1);
+		
+		 ans+=w+c+"ma";
+	}
+
+	ans+=ad+" ";
+	ad+="a";
+}  
+ans.erase(ans.size()-1,1);
+  return ans;     
+    }
+    bool bw(char c)
+    {
+    if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u'||c=='A'||c=='E'||c=='I'||c=='O'||c=='U')
+        return true;
+        else return false;
+    }
+};

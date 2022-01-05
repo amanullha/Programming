@@ -1,0 +1,180 @@
+Depth of all node from root node 
+node 0  ->  0
+node 1  ->  1
+node 2  ->  1
+node 3  ->  2
+node 4  ->  2
+node 5  ->  3
+node 6  ->  3
+node 7  ->  3
+node 8  ->  4
+node 9  ->  4
+node 10  ->  2
+node 11  ->  2
+node 12  ->  3
+node 13  ->  4
+node 14  ->  4
+node 15  ->  5
+node 16  ->  5
+node 17  ->  5
+node 18  ->  6
+node 19  ->  7
+node 20  ->  6
+
+
+Node theke 1  length por parent
+0 : -1
+1 : 0
+2 : 0
+3 : 1
+4 : 1
+5 : 3
+6 : 3
+7 : 4
+8 : 7
+9 : 7
+10 : 2
+11 : 2
+12 : 10
+13 : 12
+14 : 12
+15 : 14
+16 : 14
+17 : 8
+18 : 17
+19 : 18
+20 : 15
+
+
+Node theke 2  length por parent
+0 : 0
+1 : -1
+2 : -1
+3 : 0
+4 : 0
+5 : 1
+6 : 1
+7 : 1
+8 : 4
+9 : 4
+10 : 0
+11 : 0
+12 : 2
+13 : 10
+14 : 10
+15 : 12
+16 : 12
+17 : 7
+18 : 8
+19 : 17
+20 : 14
+
+
+Node theke 4  length por parent
+0 : 0
+1 : 0
+2 : 0
+3 : 0
+4 : 0
+5 : -1
+6 : -1
+7 : -1
+8 : 0
+9 : 0
+10 : 0
+11 : 0
+12 : -1
+13 : 0
+14 : 0
+15 : 2
+16 : 2
+17 : 1
+18 : 4
+19 : 7
+20 : 10
+
+
+Node theke 8  length por parent
+0 : 0
+1 : 0
+2 : 0
+3 : 0
+4 : 0
+5 : 0
+6 : 0
+7 : 0
+8 : 0
+9 : 0
+10 : 0
+11 : 0
+12 : 0
+13 : 0
+14 : 0
+15 : 0
+16 : 0
+17 : 0
+18 : 0
+19 : -1
+20 : 0
+
+
+Node theke 16  length por parent
+0 : 0
+1 : 0
+2 : 0
+3 : 0
+4 : 0
+5 : 0
+6 : 0
+7 : 0
+8 : 0
+9 : 0
+10 : 0
+11 : 0
+12 : 0
+13 : 0
+14 : 0
+15 : 0
+16 : 0
+17 : 0
+18 : 0
+19 : 0
+20 : 0
+
+
+Node theke 32  length por parent
+0 : 0
+1 : 0
+2 : 0
+3 : 0
+4 : 0
+5 : 0
+6 : 0
+7 : 0
+8 : 0
+9 : 0
+10 : 0
+11 : 0
+12 : 0
+13 : 0
+14 : 0
+15 : 0
+16 : 0
+17 : 0
+18 : 0
+19 : 0
+20 : 0
+
+
+
+
+LCA of 19 and 20 is : 0
+LCA of 19 and 18 is : 18
+LCA of 19 and 7 is : 7
+LCA of 7 and 20 is : 0
+LCA of 15 and 16 is : 14
+LCA of 20 and 16 is : 14
+LCA of 20 and 15 is : 15
+LCA of 5 and 11 is : 0
+LCA of 3 and 2 is : 0
+LCA of 10 and 1 is : 0

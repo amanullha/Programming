@@ -1,0 +1,51 @@
+four march file updated
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is up to date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   Codeforces/Problem_A/input.txt
+#	modified:   Codeforces/Problem_B/input.txt
+#	deleted:    Codeforces/Problem_C/Number Transformation.cpp
+#	modified:   DP/input.txt
+#	modified:   code/input.txt
+#
+# Changes not staged for commit:
+#	modified:   ruby (untracked content)
+#
+# Untracked files:
+#	Codeforces/Problem_A/ABC String.cpp
+#	Codeforces/Problem_A/Add and Divide.cpp
+#	Codeforces/Problem_A/Appleman and Toastman.cpp
+#	Codeforces/Problem_A/Shifting Stacks.cpp
+#	"Codeforces/Problem_A\\ABC String"
+#	"Codeforces/Problem_A\\Add and Divide"
+#	"Codeforces/Problem_A\\Appleman and Toastman"
+#	"Codeforces/Problem_A\\Shifting Stacks"
+#	Codeforces/Problem_B/Eastern Exhibition.cpp
+#	Codeforces/Problem_B/Replace and Keep Sorted.cpp
+#	"Codeforces/Problem_B\\Eastern Exhibition"
+#	"Codeforces/Problem_B\\Replace and Keep Sorted"
+#	DP/Hex-a-bonacci.cpp
+#	DP/LCS(longest common subsequence).cpp
+#	DP/LIS(longest increasing subsequence).cpp
+#	DP/Minimum_Vertex_Cover_Problem.cpp
+#	DP/Rooks.cpp
+#	"DP\\LCS(longest common subsequence)"
+#	"DP\\LIS(longest increasing subsequence)"
+#	"DP\\Minimum_Vertex_Cover_Problem"
+#	"DP\\Rooks"
+#	Dev_Skill_Advanced/
+#	code/Atcoder_A.cpp
+#	code/rooks
+#	code/rooks.cpp
+#	code/rooks.o
+#	code/sddd.cpp
+#	code/uri1040.cpp
+#	"code\\Atcoder_A"
+#	"code\\sddd"
+#	"code\\uri1040"
+#
